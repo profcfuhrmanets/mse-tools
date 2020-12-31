@@ -1,0 +1,778 @@
+{
+    "doc": [
+        {
+            "element": "Class",
+            "id": "1",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'User'"
+                    ]
+                },
+                {
+                    "attr": "isInterface",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "11"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "IndexedFileAnchor",
+            "id": "2",
+            "attrs": [
+                {
+                    "attr": "element",
+                    "vals": [
+                        {
+                            "ref": "26"
+                        }
+                    ]
+                },
+                {
+                    "attr": "endPos",
+                    "vals": [
+                        "51"
+                    ]
+                },
+                {
+                    "attr": "fileName",
+                    "vals": [
+                        "'User.java'"
+                    ]
+                },
+                {
+                    "attr": "startPos",
+                    "vals": [
+                        "43"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "ParameterizedType",
+            "id": "3",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'Comparable'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "parameterizableClass",
+                    "vals": [
+                        {
+                            "ref": "9"
+                        }
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "IndexedFileAnchor",
+            "id": "4",
+            "attrs": [
+                {
+                    "attr": "element",
+                    "vals": [
+                        {
+                            "ref": "1"
+                        }
+                    ]
+                },
+                {
+                    "attr": "endPos",
+                    "vals": [
+                        "54"
+                    ]
+                },
+                {
+                    "attr": "fileName",
+                    "vals": [
+                        "'User.java'"
+                    ]
+                },
+                {
+                    "attr": "startPos",
+                    "vals": [
+                        "1"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Namespace",
+            "id": "5",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'java'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Method",
+            "id": "6",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'admin'"
+                    ]
+                },
+                {
+                    "attr": "cyclomaticComplexity",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "declaredType",
+                    "vals": [
+                        {
+                            "ref": "1"
+                        }
+                    ]
+                },
+                {
+                    "attr": "numberOfStatements",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "parentType",
+                    "vals": [
+                        {
+                            "ref": "15"
+                        }
+                    ]
+                },
+                {
+                    "attr": "signature",
+                    "vals": [
+                        "'admin()'"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Class",
+            "id": "7",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'String'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "modifiers",
+                    "vals": [
+                        "'public'",
+                        "'final'"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "IndexedFileAnchor",
+            "id": "8",
+            "attrs": [
+                {
+                    "attr": "element",
+                    "vals": [
+                        {
+                            "ref": "6"
+                        }
+                    ]
+                },
+                {
+                    "attr": "endPos",
+                    "vals": [
+                        "95"
+                    ]
+                },
+                {
+                    "attr": "fileName",
+                    "vals": [
+                        "'User.java'"
+                    ]
+                },
+                {
+                    "attr": "startPos",
+                    "vals": [
+                        "83"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "ParameterizableClass",
+            "id": "9",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'Comparable'"
+                    ]
+                },
+                {
+                    "attr": "isInterface",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "modifiers",
+                    "vals": [
+                        "'public'"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Inheritance",
+            "id": "10",
+            "attrs": [
+                {
+                    "attr": "previous",
+                    "vals": [
+                        {
+                            "ref": "21"
+                        }
+                    ]
+                },
+                {
+                    "attr": "subclass",
+                    "vals": [
+                        {
+                            "ref": "7"
+                        }
+                    ]
+                },
+                {
+                    "attr": "superclass",
+                    "vals": [
+                        {
+                            "ref": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Namespace",
+            "id": "11",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'<Default Package>'"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Namespace",
+            "id": "12",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'lang'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "parentNamespace",
+                    "vals": [
+                        {
+                            "ref": "5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Inheritance",
+            "id": "13",
+            "attrs": [
+                {
+                    "attr": "previous",
+                    "vals": [
+                        {
+                            "ref": "10"
+                        }
+                    ]
+                },
+                {
+                    "attr": "subclass",
+                    "vals": [
+                        {
+                            "ref": "7"
+                        }
+                    ]
+                },
+                {
+                    "attr": "superclass",
+                    "vals": [
+                        {
+                            "ref": "18"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Namespace",
+            "id": "14",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'io'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "parentNamespace",
+                    "vals": [
+                        {
+                            "ref": "5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Class",
+            "id": "15",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'System'"
+                    ]
+                },
+                {
+                    "attr": "isInterface",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "11"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "SourceLanguage",
+            "id": "16",
+            "attrs": []
+        },
+        {
+            "element": "Inheritance",
+            "id": "17",
+            "attrs": [
+                {
+                    "attr": "subclass",
+                    "vals": [
+                        {
+                            "ref": "7"
+                        }
+                    ]
+                },
+                {
+                    "attr": "superclass",
+                    "vals": [
+                        {
+                            "ref": "24"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Class",
+            "id": "18",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'CharSequence'"
+                    ]
+                },
+                {
+                    "attr": "isInterface",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "modifiers",
+                    "vals": [
+                        "'public'"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "IndexedFileAnchor",
+            "id": "19",
+            "attrs": [
+                {
+                    "attr": "element",
+                    "vals": [
+                        {
+                            "ref": "22"
+                        }
+                    ]
+                },
+                {
+                    "attr": "endPos",
+                    "vals": [
+                        "36"
+                    ]
+                },
+                {
+                    "attr": "fileName",
+                    "vals": [
+                        "'User.java'"
+                    ]
+                },
+                {
+                    "attr": "startPos",
+                    "vals": [
+                        "23"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Class",
+            "id": "20",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'Serializable'"
+                    ]
+                },
+                {
+                    "attr": "isInterface",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "modifiers",
+                    "vals": [
+                        "'public'"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "14"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Inheritance",
+            "id": "21",
+            "attrs": [
+                {
+                    "attr": "previous",
+                    "vals": [
+                        {
+                            "ref": "17"
+                        }
+                    ]
+                },
+                {
+                    "attr": "subclass",
+                    "vals": [
+                        {
+                            "ref": "7"
+                        }
+                    ]
+                },
+                {
+                    "attr": "superclass",
+                    "vals": [
+                        {
+                            "ref": "20"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Method",
+            "id": "22",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'name'"
+                    ]
+                },
+                {
+                    "attr": "cyclomaticComplexity",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "declaredType",
+                    "vals": [
+                        {
+                            "ref": "7"
+                        }
+                    ]
+                },
+                {
+                    "attr": "numberOfStatements",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "parentType",
+                    "vals": [
+                        {
+                            "ref": "1"
+                        }
+                    ]
+                },
+                {
+                    "attr": "signature",
+                    "vals": [
+                        "'name()'"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "IndexedFileAnchor",
+            "id": "23",
+            "attrs": [
+                {
+                    "attr": "element",
+                    "vals": [
+                        {
+                            "ref": "15"
+                        }
+                    ]
+                },
+                {
+                    "attr": "endPos",
+                    "vals": [
+                        "98"
+                    ]
+                },
+                {
+                    "attr": "fileName",
+                    "vals": [
+                        "'User.java'"
+                    ]
+                },
+                {
+                    "attr": "startPos",
+                    "vals": [
+                        "59"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Class",
+            "id": "24",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'Object'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                },
+                {
+                    "attr": "typeContainer",
+                    "vals": [
+                        {
+                            "ref": "12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "PrimitiveType",
+            "id": "25",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'int'"
+                    ]
+                },
+                {
+                    "attr": "isStub",
+                    "vals": [
+                        "true"
+                    ]
+                }
+            ]
+        },
+        {
+            "element": "Method",
+            "id": "26",
+            "attrs": [
+                {
+                    "attr": "name",
+                    "vals": [
+                        "'id'"
+                    ]
+                },
+                {
+                    "attr": "cyclomaticComplexity",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "declaredType",
+                    "vals": [
+                        {
+                            "ref": "25"
+                        }
+                    ]
+                },
+                {
+                    "attr": "numberOfStatements",
+                    "vals": [
+                        "0"
+                    ]
+                },
+                {
+                    "attr": "parentType",
+                    "vals": [
+                        {
+                            "ref": "1"
+                        }
+                    ]
+                },
+                {
+                    "attr": "signature",
+                    "vals": [
+                        "'id()'"
+                    ]
+                }
+            ]
+        }
+    ]
+}

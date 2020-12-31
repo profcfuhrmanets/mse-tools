@@ -1,0 +1,166 @@
+@startuml
+skinparam style strictuml
+
+object "Class" as Class1 {
+name='User'
+isInterface=true
+}
+
+object "IndexedFileAnchor" as IndexedFileAnchor2 {
+endPos=51
+fileName='User.java'
+startPos=43
+}
+
+object "ParameterizedType" as ParameterizedType3 {
+name='Comparable'
+isStub=true
+}
+
+object "IndexedFileAnchor" as IndexedFileAnchor4 {
+endPos=54
+fileName='User.java'
+startPos=1
+}
+
+object "Namespace" as Namespace5 {
+name='java'
+isStub=true
+}
+
+object "Method" as Method6 {
+name='admin'
+cyclomaticComplexity=0
+numberOfStatements=0
+parentType=[object Object]
+signature='admin()'
+}
+
+object "Class" as Class7 {
+name='String'
+isStub=true
+modifiers='public'
+}
+
+object "IndexedFileAnchor" as IndexedFileAnchor8 {
+endPos=95
+fileName='User.java'
+startPos=83
+}
+
+object "ParameterizableClass" as ParameterizableClass9 {
+name='Comparable'
+isInterface=true
+isStub=true
+modifiers='public'
+}
+
+object "Inheritance" as Inheritance10 {
+}
+
+object "Namespace" as Namespace11 {
+name='<Default Package>'
+}
+
+object "Namespace" as Namespace12 {
+name='lang'
+isStub=true
+}
+
+object "Inheritance" as Inheritance13 {
+}
+
+object "Namespace" as Namespace14 {
+name='io'
+isStub=true
+}
+
+object "Class" as Class15 {
+name='System'
+isInterface=true
+}
+
+object "SourceLanguage" as SourceLanguage16 {
+}
+
+object "Inheritance" as Inheritance17 {
+}
+
+object "Class" as Class18 {
+name='CharSequence'
+isInterface=true
+isStub=true
+modifiers='public'
+}
+
+object "IndexedFileAnchor" as IndexedFileAnchor19 {
+endPos=36
+fileName='User.java'
+startPos=23
+}
+
+object "Class" as Class20 {
+name='Serializable'
+isInterface=true
+isStub=true
+modifiers='public'
+}
+
+object "Inheritance" as Inheritance21 {
+}
+
+object "Method" as Method22 {
+name='name'
+cyclomaticComplexity=0
+numberOfStatements=0
+parentType=[object Object]
+signature='name()'
+}
+
+object "IndexedFileAnchor" as IndexedFileAnchor23 {
+endPos=98
+fileName='User.java'
+startPos=59
+}
+
+object "Class" as Class24 {
+name='Object'
+isStub=true
+}
+
+object "PrimitiveType" as PrimitiveType25 {
+name='int'
+isStub=true
+}
+
+object "Method" as Method26 {
+name='id'
+cyclomaticComplexity=0
+numberOfStatements=0
+parentType=[object Object]
+signature='id()'
+}
+
+Class1-->Namespace11
+IndexedFileAnchor2-->Method26
+ParameterizedType3-->Namespace12
+IndexedFileAnchor4-->Class1
+Method6-->Class1
+Class7-->Namespace12
+IndexedFileAnchor8-->Method6
+ParameterizableClass9-->Namespace12
+Inheritance10-->ParameterizedType3
+Namespace12-->Namespace5
+Inheritance13-->Class18
+Namespace14-->Namespace5
+Class15-->Namespace11
+Inheritance17-->Class24
+Class18-->Namespace12
+IndexedFileAnchor19-->Method22
+Class20-->Namespace14
+Inheritance21-->Class20
+Method22-->Class7
+IndexedFileAnchor23-->Class15
+Class24-->Namespace12
+Method26-->PrimitiveType25
+@enduml

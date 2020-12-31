@@ -1,0 +1,23 @@
+{
+  "name": "mse-tools",
+  "version": "0.0.1",
+  "description": "Tools to manipulate MSE files",
+  "main": "index.js",
+  "scripts": {
+    "build": "pegjs --format globals --export-var mseParser -o lib/mse-parser-globals.js mse.pegjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:profcfuhrmanets/mse-tools"
+  },
+  "author": "Christopher Fuhrman",
+  "license": "MIT",
+  "dependencies": {
+    "pegjs": "^0.10.x"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.17",
+    "@types/pegjs": "^0.10.2",
+    "ts-node": "^9.1.1"
+  }
+}
