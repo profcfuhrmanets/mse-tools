@@ -1,40 +1,68 @@
 import { generate } from "pegjs";
 import * as fs from 'fs';
 
+const INHERITANCE_LINK_COLOR = '#orange';
+interface Association {
+    from:string; 
+    to:string;
+    name:string;
+}
+
 const grammar = fs.readFileSync('mse-famixjava.pegjs', 'utf-8');
 const parser = generate(grammar);
 
 const mseFileName = 'sample-famix-java-simple.mse';
 let sampleMSE = fs.readFileSync(mseFileName, 'utf-8');
-
 const mseJSON =  parser.parse(sampleMSE);
 
 let classNameMap = new Map<string, string>();
-
-let associationMap = new Map<string, string>();  // from id to id
+let associations = new Array<Association>();
 
 // write out JSON for debugging
 //fs.writeFileSync(mseFileName + '.json', JSON.stringify(mseJSON));
 
 // map all the classnames to their ids
-mseJSON.doc.forEach(element => classNameMap.set(element.id, element.element + element.id));
+mseJSON.doc.forEach(element => {
+    classNameMap.set(element.id, elementName(element));
+    if (element.element == 'Inheritance') {
+        // special case association
+        let subclass = refForAttr(element, 'subclass');
+        let superclass = refForAttr(element, 'superclass');
+        associations.push({from: subclass, to: superclass, name: elementName(element)})
+    }
+});
 
 // generate plantuml
-console.log ('@startuml\nskinparam style strictuml\n')
+console.log('@startuml');
+console.log('skinparam style strictuml');
+console.log('title Object diagram for ' + mseFileName + '\n');
 mseJSON.doc.forEach(element => {
     console.log(toPlantUML(element));
 });
 
 // create associations
-associationMap.forEach((toClassName:string, fromClassName: string) => 
-    console.log(classNameMap.get(fromClassName) + "-->" + classNameMap.get(toClassName))
-);
+associations.forEach(association => {
+    // Inheritance is a special case - show it in UML even though it doesn't make 100% sense in object diagrams
+    const isInheritance = association.name.startsWith('Inheritance');
+    if (isInheritance) {
+        console.log(`${classNameMap.get(association.from)} --|> ${classNameMap.get(association.to)} #line:blue`);
+        console.log(`${classNameMap.get(association.from)} .[${INHERITANCE_LINK_COLOR}]. ${association.name}`);
+        console.log(`${classNameMap.get(association.to)} .[${INHERITANCE_LINK_COLOR}]. ${association.name}`);
+    } else {
+        console.log(`${classNameMap.get(association.from)} ..> "${association.name}" ${classNameMap.get(association.to)}`);
+    }
+});
 
 console.log ('@enduml')
 
+function elementName(element: any): string {
+    return element.element + element.id;
+}
+
 function toPlantUML(element) {
-    var plantUMLString:string = '';
-    plantUMLString += 'object "' + element.element + '" as ' + element.element + element.id + ' {\n';
+    var plantUMLString: string = '';
+    plantUMLString += 'object ":' + element.element + '" as ' + elementName(element) + ' {\n';
+    plantUMLString += 'id=' + element.id + '\n';
     plantUMLString += attrToPlantUML(element);
     plantUMLString += '}\n';
     return plantUMLString;
@@ -50,18 +78,25 @@ function attrToPlantUML(element) {
             case 'element':
             case 'declaredType':
             case 'previous':
-            case 'subclass':
-            case 'superclass':
             case 'parentNamespace':
                 // association from element.id to reference
-                associationMap.set(element.id, attr.vals[0].ref)
+                //associationMap.set(element.id, attr.vals[0].ref)
+                associations.push({from:element.id, to:attr.vals[0].ref, name:attr.attr});
                 //plantUMLString += attr.attr + '=' + classNameMap.get(attr.vals[0].ref) + '\n';
                 break;
-        
+            // ignore these associations
+            case 'subclass':
+            case 'superclass':
+                break;
+                
             default:
                 plantUMLString += attr.attr + '=' + attr.vals[0] + '\n'
                 break;
         }
     });
     return plantUMLString;
+}
+
+function refForAttr(element, attrKey:string):string {
+    return element.attrs.filter(attr => attr.attr == attrKey)[0].vals[0].ref;
 }
