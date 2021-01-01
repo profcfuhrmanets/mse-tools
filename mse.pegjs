@@ -1,12 +1,12 @@
 // Quick-and-dirty PEG.js grammar from EBNF published in https://arxiv.org/abs/2011.10975
 // Try it with https://pegjs.org/online
 // Created by Christopher Fuhrman
-Root = d:Document ? {return {doc:d}}
+Root = d:Document ? {return {nodes:d}}
 Document = OPEN nodes:(ElementNode *) CLOSE {return nodes}
 ElementNode = OPEN name:ELEMENTNAME id:Serial ? attrNodes:(AttributeNode *) CLOSE 
-	{return {element:name, id:id, attrs:attrNodes}}
+	{return {name:name, id:id, attrs:attrNodes}}
 Serial = OPEN ID id:INTEGER CLOSE {return id}
-AttributeNode = OPEN n:SIMPLENAME vals:(ValueNode *) CLOSE {return {attr:n, vals:vals } }
+AttributeNode = OPEN n:SIMPLENAME vals:(ValueNode *) CLOSE {return {name:n, vals:vals } }
 ValueNode = Primitive / Reference / ElementNode
 Primitive = STRING / NUMBER / Boolean
 Boolean = TRUE / FALSE
