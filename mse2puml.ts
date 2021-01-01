@@ -1,6 +1,25 @@
 import { generate } from "pegjs";
 import * as fs from 'fs';
 
+// MSE types
+// These will change if the JSON from the PEG.js grammar changes, but not automatically
+// It helps with code completion in VSCode
+export interface MSEDocument {
+    nodes: Element[]
+  }
+  
+  export interface Element {
+    name: string
+    id?: string
+    attrs: Attr[]
+  }
+  
+  export interface Attr {
+    name: string
+    vals: any[]
+  }
+  
+
 const INHERITANCE_LINK_COLOR = '#orange';
 interface Association {
     from:string; 
@@ -13,7 +32,7 @@ const parser = generate(grammar);
 
 const mseFileName = 'sample-famix-java-simple.mse';
 let sampleMSE = fs.readFileSync(mseFileName, 'utf-8');
-const mseJSON =  parser.parse(sampleMSE);
+const mseJSON:MSEDocument =  parser.parse(sampleMSE);
 
 let classNameMap = new Map<string, string>();
 let associations = new Array<Association>();
@@ -22,13 +41,13 @@ let associations = new Array<Association>();
 //fs.writeFileSync(mseFileName + '.json', JSON.stringify(mseJSON));
 
 // map all the classnames to their ids
-mseJSON.doc.forEach(element => {
-    classNameMap.set(element.id, elementName(element));
-    if (element.element == 'Inheritance') {
+mseJSON.nodes.forEach(element => {
+    classNameMap.set(element.id, uniqueElementName(element));
+    if (element.name == 'Inheritance') {
         // special case association
         let subclass = refForAttr(element, 'subclass');
         let superclass = refForAttr(element, 'superclass');
-        associations.push({from: subclass, to: superclass, name: elementName(element)})
+        associations.push({from: subclass, to: superclass, name: uniqueElementName(element)})
     }
 });
 
@@ -36,7 +55,7 @@ mseJSON.doc.forEach(element => {
 console.log('@startuml');
 console.log('skinparam style strictuml');
 console.log('title Object diagram for ' + mseFileName + '\n');
-mseJSON.doc.forEach(element => {
+mseJSON.nodes.forEach(element => {
     console.log(toPlantUML(element));
 });
 
@@ -55,13 +74,13 @@ associations.forEach(association => {
 
 console.log ('@enduml')
 
-function elementName(element: any): string {
-    return element.element + element.id;
+function uniqueElementName(element: any): string {
+    return element.name + element.id;
 }
 
 function toPlantUML(element) {
     var plantUMLString: string = '';
-    plantUMLString += 'object ":' + element.element + '" as ' + elementName(element) + ' {\n';
+    plantUMLString += 'object ":' + element.name + '" as ' + uniqueElementName(element) + ' {\n';
     plantUMLString += 'id=' + element.id + '\n';
     plantUMLString += attrToPlantUML(element);
     plantUMLString += '}\n';
@@ -71,7 +90,7 @@ function toPlantUML(element) {
 function attrToPlantUML(element) {
     var plantUMLString:string = '';
     element.attrs.forEach(attr => {
-        switch (attr.attr) {
+        switch (attr.name) {
             // get references
             case 'parameterizableClass':
             case 'typeContainer':
@@ -81,8 +100,8 @@ function attrToPlantUML(element) {
             case 'parentNamespace':
                 // association from element.id to reference
                 //associationMap.set(element.id, attr.vals[0].ref)
-                associations.push({from:element.id, to:attr.vals[0].ref, name:attr.attr});
-                //plantUMLString += attr.attr + '=' + classNameMap.get(attr.vals[0].ref) + '\n';
+                associations.push({from:element.id, to:attr.vals[0].ref, name:attr.name});
+                //plantUMLString += attr.name + '=' + classNameMap.get(attr.vals[0].ref) + '\n';
                 break;
             // ignore these associations
             case 'subclass':
@@ -90,7 +109,7 @@ function attrToPlantUML(element) {
                 break;
                 
             default:
-                plantUMLString += attr.attr + '=' + attr.vals[0] + '\n'
+                plantUMLString += attr.name + '=' + attr.vals[0] + '\n'
                 break;
         }
     });
@@ -98,5 +117,5 @@ function attrToPlantUML(element) {
 }
 
 function refForAttr(element, attrKey:string):string {
-    return element.attrs.filter(attr => attr.attr == attrKey)[0].vals[0].ref;
+    return element.attrs.filter(attr => attr.name == attrKey)[0].vals[0].ref;
 }
