@@ -55,6 +55,7 @@ mseJSON.nodes.forEach(element => {
 console.log('@startuml');
 console.log('skinparam style strictuml');
 console.log('title Object diagram for ' + mseFileName + '\n');
+console.log('!include note-with-source.puml');
 mseJSON.nodes.forEach(element => {
     console.log(toPlantUML(element));
 });
@@ -98,6 +99,10 @@ function attrToPlantUML(element) {
             case 'declaredType':
             case 'previous':
             case 'parentNamespace':
+            case 'accessor':
+            case 'variable':
+            case 'parentType':
+            case 'parentBehaviouralEntity':
                 // association from element.id to reference
                 //associationMap.set(element.id, attr.vals[0].ref)
                 associations.push({from:element.id, to:attr.vals[0].ref, name:attr.name});
