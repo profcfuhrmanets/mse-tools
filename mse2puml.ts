@@ -1,24 +1,6 @@
 import { generate } from "pegjs";
 import * as fs from 'fs';
-
-// MSE types
-// These will change if the JSON from the PEG.js grammar changes, but not automatically
-// It helps with code completion in VSCode
-export interface MSEDocument {
-    nodes: Element[]
-  }
-  
-  export interface Element {
-    name: string
-    id?: string
-    attrs: Attr[]
-  }
-  
-  export interface Attr {
-    name: string
-    vals: any[]
-  }
-  
+import { MSEDocument } from "./src/MSEDocument";
 
 const INHERITANCE_LINK_COLOR = '#orange';
 interface Association {
