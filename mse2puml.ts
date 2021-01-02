@@ -1,6 +1,6 @@
 import { generate } from "pegjs";
 import * as fs from 'fs';
-import { MSEDocument } from "./src/MSEDocument";
+import { MSEDocument, Element, Attr } from "./src/MSEDocument";
 
 const INHERITANCE_LINK_COLOR = '#orange';
 interface Association {
@@ -24,6 +24,7 @@ let associations = new Array<Association>();
 
 // map all the classnames to their ids
 mseJSON.nodes.forEach(element => {
+    // Map has id as key and unique (plantuml) class name
     classNameMap.set(element.id, uniqueElementName(element));
     if (element.name == 'Inheritance') {
         // special case association
@@ -57,12 +58,12 @@ associations.forEach(association => {
 
 console.log ('@enduml')
 
-function uniqueElementName(element: any): string {
+function uniqueElementName(element: Element): string {
     return element.name + element.id;
 }
 
-function toPlantUML(element) {
-    var plantUMLString: string = '';
+function toPlantUML(element: Element) {
+    let plantUMLString: string = '';
     plantUMLString += 'object ":' + element.name + '" as ' + uniqueElementName(element) + ' {\n';
     plantUMLString += 'id=' + element.id + '\n';
     plantUMLString += attrToPlantUML(element);
@@ -70,7 +71,7 @@ function toPlantUML(element) {
     return plantUMLString;
 }
 
-function attrToPlantUML(element) {
+function attrToPlantUML(element:Element) {
     var plantUMLString:string = '';
     element.attrs.forEach(attr => {
         switch (attr.name) {
@@ -103,6 +104,6 @@ function attrToPlantUML(element) {
     return plantUMLString;
 }
 
-function refForAttr(element, attrKey:string):string {
+function refForAttr(element:Element, attrKey:string):string {
     return element.attrs.filter(attr => attr.name == attrKey)[0].vals[0].ref;
 }
