@@ -16,6 +16,9 @@ const mseFileName = 'sample-famix-java-simple.mse';
 let sampleMSE = fs.readFileSync(mseFileName, 'utf-8');
 const mseJSON:MSEDocument =  new MSEDocument(parser.parse(sampleMSE));
 
+const sampleJavaFileNote = 'note-with-source.puml';
+let sampleJavaFileNotePUML = fs.readFileSync(sampleJavaFileNote, 'utf-8');
+
 let classNameMap = new Map<string, string>();
 let associations = new Array<Association>();
 
@@ -38,7 +41,7 @@ mseJSON.nodes.forEach(element => {
 console.log('@startuml');
 console.log('skinparam style strictuml');
 console.log('title Object diagram for ' + mseFileName + '\n');
-console.log('!include note-with-source.puml');
+console.log(sampleJavaFileNotePUML); // put the note in the UML
 mseJSON.nodes.forEach(element => {
     console.log(toPlantUML(element));
 });
