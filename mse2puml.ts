@@ -68,8 +68,8 @@ function uniqueElementName(element: Element): string {
 function toPlantUML(element: Element) {
     let plantUMLString: string = '';
     let optionalName: string = element.getFirstValueForAttr('name');
-    if (optionalName != '') optionalName = ' ' + optionalName + ' ';
-    plantUMLString += 'object ":' + element.name + optionalName + '" as ' + uniqueElementName(element) + ' {\n';
+    if (optionalName != '') optionalName = optionalName.replace(/'/g, '');
+    plantUMLString += 'object "' + optionalName + ':' + element.name + '" as ' + uniqueElementName(element) + ' {\n';
     plantUMLString += 'id=' + element.id + '\n';
     plantUMLString += attrToPlantUML(element);
     plantUMLString += '}\n';
