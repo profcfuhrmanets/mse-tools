@@ -1,166 +1,293 @@
 @startuml
 skinparam style strictuml
+title Object diagram for sample-famix-java-simple.mse
 
-object "Class" as Class1 {
-name='User'
-isInterface=true
-}
+note as NSource
+Input file for MSE: ""A.java""
+""public class A {""
+""    private String name;""
 
-object "IndexedFileAnchor" as IndexedFileAnchor2 {
-endPos=51
-fileName='User.java'
-startPos=43
-}
+""    public String getName() {""
+""        return name;""
+""    }""
 
-object "ParameterizedType" as ParameterizedType3 {
+""    public void setName(String name) {""
+""        this.name = name;""
+""    }""
+""}""
+end note
+object ":ParameterizedType 'Comparable' " as ParameterizedType1 {
+id=1
 name='Comparable'
 isStub=true
 }
 
-object "IndexedFileAnchor" as IndexedFileAnchor4 {
-endPos=54
-fileName='User.java'
-startPos=1
+object ":Access" as Access2 {
+id=2
+isWrite=true
 }
 
-object "Namespace" as Namespace5 {
-name='java'
-isStub=true
+object ":Access" as Access3 {
+id=3
 }
 
-object "Method" as Method6 {
-name='admin'
-cyclomaticComplexity=0
-numberOfStatements=0
-parentType=[object Object]
-signature='admin()'
+object ":Access" as Access4 {
+id=4
+isWrite=true
 }
 
-object "Class" as Class7 {
-name='String'
-isStub=true
+object ":Class 'A' " as Class5 {
+id=5
+name='A'
 modifiers='public'
 }
 
-object "IndexedFileAnchor" as IndexedFileAnchor8 {
-endPos=95
-fileName='User.java'
-startPos=83
+object ":Inheritance" as Inheritance6 {
+id=6
 }
 
-object "ParameterizableClass" as ParameterizableClass9 {
-name='Comparable'
-isInterface=true
-isStub=true
-modifiers='public'
+object ":Inheritance" as Inheritance7 {
+id=7
 }
 
-object "Inheritance" as Inheritance10 {
-}
-
-object "Namespace" as Namespace11 {
-name='<Default Package>'
-}
-
-object "Namespace" as Namespace12 {
-name='lang'
-isStub=true
-}
-
-object "Inheritance" as Inheritance13 {
-}
-
-object "Namespace" as Namespace14 {
+object ":Namespace 'io' " as Namespace8 {
+id=8
 name='io'
 isStub=true
 }
 
-object "Class" as Class15 {
-name='System'
-isInterface=true
+object ":IndexedFileAnchor" as IndexedFileAnchor9 {
+id=9
+endPos=172
+fileName='A.java'
+startPos=169
 }
 
-object "SourceLanguage" as SourceLanguage16 {
+object ":IndexedFileAnchor" as IndexedFileAnchor10 {
+id=10
+endPos=180
+fileName='A.java'
+startPos=113
 }
 
-object "Inheritance" as Inheritance17 {
+object ":IndexedFileAnchor" as IndexedFileAnchor11 {
+id=11
+endPos=96
+fileName='A.java'
+startPos=93
 }
 
-object "Class" as Class18 {
+object ":Method 'getName' " as Method12 {
+id=12
+name='getName'
+cyclomaticComplexity=1
+modifiers='public'
+numberOfStatements=1
+signature='getName()'
+}
+
+object ":PrimitiveType 'void' " as PrimitiveType13 {
+id=13
+name='void'
+isStub=true
+}
+
+object ":ImplicitVariable 'self' " as ImplicitVariable14 {
+id=14
+name='self'
+isStub=true
+}
+
+object ":IndexedFileAnchor" as IndexedFileAnchor15 {
+id=15
+endPos=165
+fileName='A.java'
+startPos=157
+}
+
+object ":Method 'setName' " as Method16 {
+id=16
+name='setName'
+cyclomaticComplexity=1
+modifiers='public'
+numberOfStatements=2
+signature='setName(String)'
+}
+
+object ":IndexedFileAnchor" as IndexedFileAnchor17 {
+id=17
+endPos=143
+fileName='A.java'
+startPos=133
+}
+
+object ":Namespace 'lang' " as Namespace18 {
+id=18
+name='lang'
+isStub=true
+}
+
+object ":Inheritance" as Inheritance19 {
+id=19
+}
+
+object ":IndexedFileAnchor" as IndexedFileAnchor20 {
+id=20
+endPos=41
+fileName='A.java'
+startPos=38
+}
+
+object ":Parameter 'name' " as Parameter21 {
+id=21
+name='name'
+}
+
+object ":Access" as Access22 {
+id=22
+}
+
+object ":Namespace '<Default Package>' " as Namespace23 {
+id=23
+name='<Default Package>'
+}
+
+object ":Class 'CharSequence' " as Class24 {
+id=24
 name='CharSequence'
 isInterface=true
 isStub=true
 modifiers='public'
 }
 
-object "IndexedFileAnchor" as IndexedFileAnchor19 {
-endPos=36
-fileName='User.java'
-startPos=23
+object ":Inheritance" as Inheritance25 {
+id=25
 }
 
-object "Class" as Class20 {
+object ":IndexedFileAnchor" as IndexedFileAnchor26 {
+id=26
+endPos=165
+fileName='A.java'
+startPos=157
+}
+
+object ":SourceLanguage" as SourceLanguage27 {
+id=27
+}
+
+object ":Attribute 'name' " as Attribute28 {
+id=28
+name='name'
+modifiers='private'
+}
+
+object ":IndexedFileAnchor" as IndexedFileAnchor29 {
+id=29
+endPos=104
+fileName='A.java'
+startPos=51
+}
+
+object ":Class 'Object' " as Class30 {
+id=30
+name='Object'
+isStub=true
+}
+
+object ":IndexedFileAnchor" as IndexedFileAnchor31 {
+id=31
+endPos=183
+fileName='A.java'
+startPos=1
+}
+
+object ":Class 'String' " as Class32 {
+id=32
+name='String'
+isStub=true
+modifiers='public'
+}
+
+object ":Inheritance" as Inheritance33 {
+id=33
+}
+
+object ":Class 'Serializable' " as Class34 {
+id=34
 name='Serializable'
 isInterface=true
 isStub=true
 modifiers='public'
 }
 
-object "Inheritance" as Inheritance21 {
+object ":ParameterizableClass 'Comparable' " as ParameterizableClass35 {
+id=35
+name='Comparable'
+isInterface=true
+isStub=true
+modifiers='public'
 }
 
-object "Method" as Method22 {
-name='name'
-cyclomaticComplexity=0
-numberOfStatements=0
-parentType=[object Object]
-signature='name()'
-}
-
-object "IndexedFileAnchor" as IndexedFileAnchor23 {
-endPos=98
-fileName='User.java'
-startPos=59
-}
-
-object "Class" as Class24 {
-name='Object'
+object ":Namespace 'java' " as Namespace36 {
+id=36
+name='java'
 isStub=true
 }
 
-object "PrimitiveType" as PrimitiveType25 {
-name='int'
-isStub=true
-}
-
-object "Method" as Method26 {
-name='id'
-cyclomaticComplexity=0
-numberOfStatements=0
-parentType=[object Object]
-signature='id()'
-}
-
-Class1-->Namespace11
-IndexedFileAnchor2-->Method26
-ParameterizedType3-->Namespace12
-IndexedFileAnchor4-->Class1
-Method6-->Class1
-Class7-->Namespace12
-IndexedFileAnchor8-->Method6
-ParameterizableClass9-->Namespace12
-Inheritance10-->ParameterizedType3
-Namespace12-->Namespace5
-Inheritance13-->Class18
-Namespace14-->Namespace5
-Class15-->Namespace11
-Inheritance17-->Class24
-Class18-->Namespace12
-IndexedFileAnchor19-->Method22
-Class20-->Namespace14
-Inheritance21-->Class20
-Method22-->Class7
-IndexedFileAnchor23-->Class15
-Class24-->Namespace12
-Method26-->PrimitiveType25
+Class32 --|> Class30 #line:blue
+Class32 .[#orange]. Inheritance6
+Class30 .[#orange]. Inheritance6
+Class32 --|> ParameterizedType1 #line:blue
+Class32 .[#orange]. Inheritance7
+ParameterizedType1 .[#orange]. Inheritance7
+Class5 --|> Class30 #line:blue
+Class5 .[#orange]. Inheritance19
+Class30 .[#orange]. Inheritance19
+Class32 --|> Class24 #line:blue
+Class32 .[#orange]. Inheritance25
+Class24 .[#orange]. Inheritance25
+Class32 --|> Class34 #line:blue
+Class32 .[#orange]. Inheritance33
+Class34 .[#orange]. Inheritance33
+ParameterizedType1 ..> "parameterizableClass" ParameterizableClass35
+ParameterizedType1 ..> "typeContainer" Namespace18
+Access2 ..> "accessor" Method16
+Access2 ..> "variable" ImplicitVariable14
+Access3 ..> "accessor" Method16
+Access3 ..> "previous" Access4
+Access3 ..> "variable" Parameter21
+Access4 ..> "accessor" Method16
+Access4 ..> "previous" Access2
+Access4 ..> "variable" Attribute28
+Class5 ..> "typeContainer" Namespace23
+Inheritance7 ..> "previous" Inheritance33
+Namespace8 ..> "parentNamespace" Namespace36
+IndexedFileAnchor9 ..> "element" Access3
+IndexedFileAnchor10 ..> "element" Method16
+IndexedFileAnchor11 ..> "element" Access22
+Method12 ..> "declaredType" Class32
+Method12 ..> "parentType" Class5
+ImplicitVariable14 ..> "parentBehaviouralEntity" Method16
+IndexedFileAnchor15 ..> "element" Access2
+Method16 ..> "declaredType" PrimitiveType13
+Method16 ..> "parentType" Class5
+IndexedFileAnchor17 ..> "element" Parameter21
+Namespace18 ..> "parentNamespace" Namespace36
+IndexedFileAnchor20 ..> "element" Attribute28
+Parameter21 ..> "declaredType" Class32
+Parameter21 ..> "parentBehaviouralEntity" Method16
+Access22 ..> "accessor" Method12
+Access22 ..> "variable" Attribute28
+Class24 ..> "typeContainer" Namespace18
+Inheritance25 ..> "previous" Inheritance7
+IndexedFileAnchor26 ..> "element" Access4
+Attribute28 ..> "declaredType" Class32
+Attribute28 ..> "parentType" Class5
+IndexedFileAnchor29 ..> "element" Method12
+Class30 ..> "typeContainer" Namespace18
+IndexedFileAnchor31 ..> "element" Class5
+Class32 ..> "typeContainer" Namespace18
+Inheritance33 ..> "previous" Inheritance6
+Class34 ..> "typeContainer" Namespace8
+ParameterizableClass35 ..> "typeContainer" Namespace18
 @enduml
