@@ -16,7 +16,7 @@ Input file for MSE: ""A.java""
 ""    }""
 ""}""
 end note
-object ":ParameterizedType 'Comparable' " as ParameterizedType1 {
+object "Comparable:ParameterizedType" as ParameterizedType1 {
 id=1
 name='Comparable'
 isStub=true
@@ -36,7 +36,7 @@ id=4
 isWrite=true
 }
 
-object ":Class 'A' " as Class5 {
+object "A:Class" as Class5 {
 id=5
 name='A'
 modifiers='public'
@@ -50,7 +50,7 @@ object ":Inheritance" as Inheritance7 {
 id=7
 }
 
-object ":Namespace 'io' " as Namespace8 {
+object "io:Namespace" as Namespace8 {
 id=8
 name='io'
 isStub=true
@@ -77,7 +77,7 @@ fileName='A.java'
 startPos=93
 }
 
-object ":Method 'getName' " as Method12 {
+object "getName:Method" as Method12 {
 id=12
 name='getName'
 cyclomaticComplexity=1
@@ -86,13 +86,13 @@ numberOfStatements=1
 signature='getName()'
 }
 
-object ":PrimitiveType 'void' " as PrimitiveType13 {
+object "void:PrimitiveType" as PrimitiveType13 {
 id=13
 name='void'
 isStub=true
 }
 
-object ":ImplicitVariable 'self' " as ImplicitVariable14 {
+object "self:ImplicitVariable" as ImplicitVariable14 {
 id=14
 name='self'
 isStub=true
@@ -105,7 +105,7 @@ fileName='A.java'
 startPos=157
 }
 
-object ":Method 'setName' " as Method16 {
+object "setName:Method" as Method16 {
 id=16
 name='setName'
 cyclomaticComplexity=1
@@ -121,7 +121,7 @@ fileName='A.java'
 startPos=133
 }
 
-object ":Namespace 'lang' " as Namespace18 {
+object "lang:Namespace" as Namespace18 {
 id=18
 name='lang'
 isStub=true
@@ -138,7 +138,7 @@ fileName='A.java'
 startPos=38
 }
 
-object ":Parameter 'name' " as Parameter21 {
+object "name:Parameter" as Parameter21 {
 id=21
 name='name'
 }
@@ -147,12 +147,12 @@ object ":Access" as Access22 {
 id=22
 }
 
-object ":Namespace '<Default Package>' " as Namespace23 {
+object "<Default Package>:Namespace" as Namespace23 {
 id=23
 name='<Default Package>'
 }
 
-object ":Class 'CharSequence' " as Class24 {
+object "CharSequence:Class" as Class24 {
 id=24
 name='CharSequence'
 isInterface=true
@@ -175,7 +175,7 @@ object ":SourceLanguage" as SourceLanguage27 {
 id=27
 }
 
-object ":Attribute 'name' " as Attribute28 {
+object "name:Attribute" as Attribute28 {
 id=28
 name='name'
 modifiers='private'
@@ -188,7 +188,7 @@ fileName='A.java'
 startPos=51
 }
 
-object ":Class 'Object' " as Class30 {
+object "Object:Class" as Class30 {
 id=30
 name='Object'
 isStub=true
@@ -201,7 +201,7 @@ fileName='A.java'
 startPos=1
 }
 
-object ":Class 'String' " as Class32 {
+object "String:Class" as Class32 {
 id=32
 name='String'
 isStub=true
@@ -212,7 +212,7 @@ object ":Inheritance" as Inheritance33 {
 id=33
 }
 
-object ":Class 'Serializable' " as Class34 {
+object "Serializable:Class" as Class34 {
 id=34
 name='Serializable'
 isInterface=true
@@ -220,7 +220,7 @@ isStub=true
 modifiers='public'
 }
 
-object ":ParameterizableClass 'Comparable' " as ParameterizableClass35 {
+object "Comparable:ParameterizableClass" as ParameterizableClass35 {
 id=35
 name='Comparable'
 isInterface=true
@@ -228,7 +228,7 @@ isStub=true
 modifiers='public'
 }
 
-object ":Namespace 'java' " as Namespace36 {
+object "java:Namespace" as Namespace36 {
 id=36
 name='java'
 isStub=true
