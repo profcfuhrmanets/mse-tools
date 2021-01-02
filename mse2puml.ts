@@ -14,7 +14,7 @@ const parser = generate(grammar);
 
 const mseFileName = 'sample-famix-java-simple.mse';
 let sampleMSE = fs.readFileSync(mseFileName, 'utf-8');
-const mseJSON:MSEDocument =  parser.parse(sampleMSE);
+const mseJSON:MSEDocument =  new MSEDocument(parser.parse(sampleMSE));
 
 let classNameMap = new Map<string, string>();
 let associations = new Array<Association>();
@@ -64,7 +64,9 @@ function uniqueElementName(element: Element): string {
 
 function toPlantUML(element: Element) {
     let plantUMLString: string = '';
-    plantUMLString += 'object ":' + element.name + '" as ' + uniqueElementName(element) + ' {\n';
+    let optionalName: string = element.getFirstValueForAttr('name');
+    if (optionalName != '') optionalName = ' ' + optionalName + ' ';
+    plantUMLString += 'object ":' + element.name + optionalName + '" as ' + uniqueElementName(element) + ' {\n';
     plantUMLString += 'id=' + element.id + '\n';
     plantUMLString += attrToPlantUML(element);
     plantUMLString += '}\n';
