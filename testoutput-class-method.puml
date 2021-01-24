@@ -1,0 +1,34 @@
+@startuml
+skinparam style strictuml
+title Object diagram for sample-famix-java-simple-class-method.mse
+
+object "A:Class" as Class5 {
+id=5
+name='A'
+modifiers='public'
+}
+
+object "getName:Method" as Method12 {
+id=12
+name='getName'
+cyclomaticComplexity=1
+modifiers='public'
+numberOfStatements=1
+signature='getName()'
+}
+
+object "setName:Method" as Method16 {
+id=16
+name='setName'
+cyclomaticComplexity=1
+modifiers='public'
+numberOfStatements=2
+signature='setName(String)'
+}
+
+Class5 ..> "typeContainer" undefined
+Method12 ..> "declaredType" undefined
+Method12 ..> "parentType" Class5
+Method16 ..> "declaredType" undefined
+Method16 ..> "parentType" Class5
+@enduml
