@@ -12,6 +12,7 @@ interface Association {
 const grammar = fs.readFileSync('mse-famixjava.pegjs', 'utf-8');
 const parser = generate(grammar);
 
+// Load the MSE file, this should ideally not be hard-coded
 const mseFileName = 'sample-famix-java-simple.mse';
 let sampleMSE = fs.readFileSync(mseFileName, 'utf-8');
 const mseJSON:MSEDocument =  new MSEDocument(parser.parse(sampleMSE));
@@ -41,7 +42,7 @@ mseJSON.nodes.forEach(element => {
 console.log('@startuml');
 console.log('skinparam style strictuml');
 console.log('title Object diagram for ' + mseFileName + '\n');
-console.log(sampleJavaFileNotePUML); // put the note in the UML
+console.log(sampleJavaFileNotePUML); // put the note in the UML, don't use for general case
 mseJSON.nodes.forEach(element => {
     console.log(toPlantUML(element));
 });
