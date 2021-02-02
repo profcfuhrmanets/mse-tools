@@ -1,4 +1,4 @@
-// Quick-and-dirty PEG.js grammar from EBNF published in https://arxiv.org/abs/2011.10975
+// Quick-and-dirty PEG.js grammar from EBNF published in https://www.researchgate.net/publication/265428652_MSE_and_FAMIX_30_an_Interexchange_Format_and_Source_Code_Model_Family
 // Try it with https://pegjs.org/online
 // Created by Christopher Fuhrman
 Root = d:Document ? {return {nodes:d}}
@@ -22,7 +22,7 @@ TRUE = _ t:"true" _ {return t}
 FALSE = _ t:"false" _ {return t} 
 ELEMENTNAME "ElementName" = _ letter ( letter / digit ) * ( "." letter ( letter / digit ) * ) _  {return text().trim()}
 SIMPLENAME "Simplename" = _ letter ( letter / digit ) * _  {return text().trim()}
-TYPENAME "Typename" = 'Object' / 'Number' / 'Boolean' / 'String' 
+TYPENAME "Typename" = 'Object' / 'Character' / 'Number' / 'Fraction' / 'String' / 'Symbol' / 'Boolean' 
 INTEGER "Integer" = _ digit + _ {return text().trim()}
 NUMBER = _ "-" ? digit + ( "." digit + ) ? ( ( "e" / "E" ) ( "-" / "+" ) ? digit + ) ? _ {return text().trim()}
 STRING = _ ( "\'" [^'] * "\'" ) + _ {return text().trim()}
