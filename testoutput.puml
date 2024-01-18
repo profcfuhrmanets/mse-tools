@@ -1,5 +1,6 @@
 @startuml
 skinparam style strictuml
+skinparam backgroundcolor transparent
 title Object diagram for sample-famix-java-simple.mse
 
 note as NSource
